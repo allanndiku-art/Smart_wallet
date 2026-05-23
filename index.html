@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MobiBridge Wallet</title>
+
+    <!-- CSS (STATIC FILE) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>💰 MobiBridge Fintech Dashboard</h1>
+
+    <!-- ================= LOGIN SECTION ================= -->
+    <div class="container">
+        <h2>🔐 Login</h2>
+
+        <input id="username" type="text" placeholder="Username">
+        <input id="password" type="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p id="login_status"></p>
+    </div>
+
+
+    <!-- ================= BALANCE SECTION ================= -->
+    <div class="container">
+        <h2>💳 Wallet Balance</h2>
+
+        <button onclick="getBalance()">Check Balance</button>
+
+        <h3 id="balance">KES 0</h3>
+    </div>
+
+
+    <!-- ================= TRANSFER SECTION ================= -->
+    <div class="container">
+        <h2>💸 Send Money</h2>
+
+        <input id="receiver" type="number" placeholder="Receiver User ID">
+        <input id="amount" type="number" placeholder="Amount">
+
+        <button onclick="transfer()">Send</button>
+
+        <p id="transfer_status"></p>
+    </div>
+
+
+    <!-- ================= TRANSACTIONS SECTION ================= -->
+    <div class="container">
+        <h2>📜 Transaction History</h2>
+
+        <button onclick="getTransactions()">Load History</button>
+
+        <pre id="history"></pre>
+    </div>
+
+
+    <!-- ================= JAVASCRIPT (STATIC FILE) ================= -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
